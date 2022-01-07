@@ -1,0 +1,873 @@
+$female_total_width: 440;
+$female_total_height: 406;
+
+    .female-sprite-m1-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-11 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-12 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-13 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-14 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m1-9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-13 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-14 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m2-5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m3-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m4-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m5-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m5-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m5-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m5-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-m5-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m11 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m12 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-11 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-12 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-13 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-14 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-0-9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m11 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m12 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-11 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-12 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-13 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-14 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-1-9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m11 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m12 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-34 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-68 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-102 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-136 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-0 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-170 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-1 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-204 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-2 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-238 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-3 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-272 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-4 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-306 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-340 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((0 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-34 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-68 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-2-9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-102 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-3-m10 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-136 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-3-m5 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-170 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-3-m6 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-204 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-3-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-238 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-3-m8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-272 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-3-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-306 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-4-m7 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-340 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-4-m8 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-374 / ($female_total_width - 32)) * -100%) ((-374 / ($female_total_height - 32)) * -100%);
+
+    }
+    .female-sprite-4-m9 {
+    background-size: (($female_total_width / 32) * 100%) (($female_total_height / 32) * 100%);
+    background-image: url(public/female-sprites.png);
+    background-position: ((-408 / ($female_total_width - 32)) * -100%) ((0 / ($female_total_height - 32)) * -100%);
+
+    }

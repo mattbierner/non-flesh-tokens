@@ -123,9 +123,9 @@ function Cell(props: {
             }} onClick={() => {
                 dispatch(slice.actions.didSelectAction({ type: props.asset.type, x: props.asset.coords[0], y: props.asset.coords[1] }))
             }}>
-                <div className='cell-content' style={{
-                    backgroundImage: `url(${props.asset.previewUrl})`,
-                    backgroundSize: '100%'
+                <div className={'cell-content ' + props.asset.previewSpriteCssName} style={{
+                    // backgroundImage: `url(${props.asset.previewUrl})`,
+                    // backgroundSize: '100%'
                 }}>
                 </div>
             </div>

@@ -23554,6 +23554,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       this.coords = [+match[1], +match[2]];
       this.lastSalePrice_eth = this.raw.lastSale ? +this.raw.lastSale.eth_price : 0;
     }
+    get previewSpriteCssName() {
+      return (this.type === 0 ? "male-sprite" : "female-sprite") + "-" + this.coords[0].toString().replace("-", "m") + "-" + this.coords[1].toString().replace("-", "m");
+    }
     get previewUrl() {
       return `/${this.type === 0 ? "out-male-previews" : "out-female-previews"}/${this.coords[0]},${this.coords[1]}.png`;
     }
@@ -23736,11 +23739,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         dispatch(slice.actions.didSelectAction({ type: props.asset.type, x: props.asset.coords[0], y: props.asset.coords[1] }));
       }
     }, /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "cell-content",
-      style: {
-        backgroundImage: `url(${props.asset.previewUrl})`,
-        backgroundSize: "100%"
-      }
+      className: "cell-content " + props.asset.previewSpriteCssName,
+      style: {}
     })));
   }
   function EmptyCell(props) {

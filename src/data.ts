@@ -53,6 +53,10 @@ export class Asset {
         this.lastSalePrice_eth = this.raw.lastSale ? +this.raw.lastSale.eth_price : 0;
     }
 
+    public get previewSpriteCssName(): string {
+        return (this.type === AssetType.Male ? 'male-sprite' : 'female-sprite') + '-' + this.coords[0].toString().replace('-', 'm') + '-' + this.coords[1].toString().replace('-', 'm')
+    }
+
     public get previewUrl(): string {
         return `/${this.type === AssetType.Male ? 'out-male-previews' : 'out-female-previews'}/${this.coords[0]},${this.coords[1]}.png`
     }
