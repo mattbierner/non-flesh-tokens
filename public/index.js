@@ -23845,7 +23845,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "title"
     }, props.type === AssetType.Female ? "Female" : "Male", " ", /* @__PURE__ */ import_react10.default.createElement("span", null, "x=", props.x), ", ", /* @__PURE__ */ import_react10.default.createElement("span", null, "y=", props.y)), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "properties"
-    }, /* @__PURE__ */ import_react10.default.createElement("span", null, "Number Sales: ", asset.raw.num_sales), asset.raw.lastSale && /* @__PURE__ */ import_react10.default.createElement("span", null, "Last Sale: ", asset.raw.lastSale.eth_price, "ETH ($", asset.raw.lastSale.usd_price, ")")), /* @__PURE__ */ import_react10.default.createElement("a", {
+    }, /* @__PURE__ */ import_react10.default.createElement("div", null, "Last Sale: ", asset.raw.lastSale ? `${asset.raw.lastSale.eth_price}ETH (${asset.raw.lastSale.usd_price}` : "none"), /* @__PURE__ */ import_react10.default.createElement("div", null, "Number of Sales: ", asset.raw.num_sales)), /* @__PURE__ */ import_react10.default.createElement("a", {
       className: "item-link",
       href: `https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/${asset.raw.token_id}`
     }, "View on OpenSea"));
