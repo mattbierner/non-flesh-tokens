@@ -23841,9 +23841,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, /* @__PURE__ */ import_react10.default.createElement("img", {
       className: "thumbnail",
       src: asset.raw.image_thumbnail_url
-    }), /* @__PURE__ */ import_react10.default.createElement("h2", null, props.type === AssetType.Female ? "Female" : "Male", " ", /* @__PURE__ */ import_react10.default.createElement("span", null, "x=", props.x), ", ", /* @__PURE__ */ import_react10.default.createElement("span", null, "y=", props.y)), /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("span", null, "Number Sales: ", asset.raw.num_sales), asset.raw.lastSale && /* @__PURE__ */ import_react10.default.createElement("span", null, "Last Sale: ", asset.raw.lastSale.eth_price, "ETH ($", asset.raw.lastSale.usd_price, ")")), /* @__PURE__ */ import_react10.default.createElement("a", {
+    }), /* @__PURE__ */ import_react10.default.createElement("h2", {
+      className: "title"
+    }, props.type === AssetType.Female ? "Female" : "Male", " ", /* @__PURE__ */ import_react10.default.createElement("span", null, "x=", props.x), ", ", /* @__PURE__ */ import_react10.default.createElement("span", null, "y=", props.y)), /* @__PURE__ */ import_react10.default.createElement("div", {
+      className: "properties"
+    }, /* @__PURE__ */ import_react10.default.createElement("span", null, "Number Sales: ", asset.raw.num_sales), asset.raw.lastSale && /* @__PURE__ */ import_react10.default.createElement("span", null, "Last Sale: ", asset.raw.lastSale.eth_price, "ETH ($", asset.raw.lastSale.usd_price, ")")), /* @__PURE__ */ import_react10.default.createElement("a", {
+      className: "item-link",
       href: `https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/${asset.raw.token_id}`
-    }, "View on Open Sea"));
+    }, "View on OpenSea"));
   }
 
   // src/components/App.tsx

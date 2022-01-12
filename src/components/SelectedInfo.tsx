@@ -7,9 +7,9 @@ export function SelectedInfo(props: { data: AssetCollection, x: number, y: numbe
         <div className='selected-info'>
             <img className='thumbnail' src={asset.raw.image_thumbnail_url} />
 
-            <h2>{props.type === AssetType.Female ? 'Female' : 'Male'} <span>x={props.x}</span>, <span>y={props.y}</span></h2>
+            <h2 className='title'>{props.type === AssetType.Female ? 'Female' : 'Male'} <span>x={props.x}</span>, <span>y={props.y}</span></h2>
 
-            <div>
+            <div className='properties'>
                 <span>Number Sales: {asset.raw.num_sales}</span>
 
                 {asset.raw.lastSale &&
@@ -17,7 +17,7 @@ export function SelectedInfo(props: { data: AssetCollection, x: number, y: numbe
                 }
             </div>
 
-            <a href={`https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/${asset.raw.token_id}`}>View on Open Sea</a>
+            <a className='item-link' href={`https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/${asset.raw.token_id}`}>View on OpenSea</a>
         </div>
     );
 }
