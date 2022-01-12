@@ -56,10 +56,6 @@ export class Asset {
     public get previewSpriteCssName(): string {
         return (this.type === AssetType.Male ? 'male-sprite' : 'female-sprite') + '-' + this.coords[0].toString().replace('-', 'm') + '-' + this.coords[1].toString().replace('-', 'm')
     }
-
-    public get previewUrl(): string {
-        return `/${this.type === AssetType.Male ? 'out-male-previews' : 'out-female-previews'}/${this.coords[0]},${this.coords[1]}.png`
-    }
 }
 
 
@@ -109,6 +105,10 @@ export class AssetSet {
         return Array.from(this._assets);
     }
 
+    public get sortedByPriceLowHigh(): Asset[] {
+        return this.assets.sort((a, b) => a.lastSalePrice_eth - b.lastSalePrice_eth);
+    }
+
     public get(x: number, y: number): Asset | undefined {
         return this.assets.find(asset => {
             return asset.coords[0] === x && asset.coords[1] === y;
@@ -121,14 +121,3 @@ export class AssetSet {
         });
     }
 }
-
-// export class AssetGrid {
-
-//     static fromPositions(set: AssetSet) {
-
-//     }
-
-//     public readonly width: number;
-//     public readonly height: number;
-
-// }

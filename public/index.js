@@ -2477,11 +2477,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React7 = require_react();
+          var React8 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format2) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2513,7 +2513,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React7) {
+          if (!React8) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3729,7 +3729,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React7.Children.forEach(children, function(child) {
+            React8.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3740,7 +3740,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React7.Children.forEach(props.children, function(child) {
+                React8.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10933,7 +10933,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React7.Component().refs;
+          var emptyRefsObject = new React8.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21578,7 +21578,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/index.tsx
-  var import_react11 = __toModule(require_react());
+  var import_react12 = __toModule(require_react());
   var import_react_dom2 = __toModule(require_react_dom());
 
   // node_modules/react-redux/es/components/Provider.js
@@ -21912,8 +21912,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // node_modules/react-redux/es/index.js
   setBatch(import_react_dom.unstable_batchedUpdates);
 
-  // src/App.tsx
-  var import_react10 = __toModule(require_react());
+  // src/components/App.tsx
+  var import_react11 = __toModule(require_react());
 
   // node_modules/react-flip-toolkit/lib/index.es.js
   var import_react8 = __toModule(require_react());
@@ -22553,8 +22553,100 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   m2.displayName = "Flipped";
 
-  // src/Collection.tsx
-  var import_react9 = __toModule(require_react());
+  // src/data.ts
+  var AssetType;
+  (function(AssetType3) {
+    AssetType3[AssetType3["Male"] = 0] = "Male";
+    AssetType3[AssetType3["Female"] = 1] = "Female";
+  })(AssetType || (AssetType = {}));
+  var Asset = class {
+    constructor(raw) {
+      this.raw = raw;
+      this.name = raw.name;
+      this.type = raw.name.startsWith("Male") ? 0 : 1;
+      const match = raw.name.match(/\((-?\d+), (-?\d+)\)/);
+      if (!match) {
+        console.log(raw.name);
+        throw new Error("Could not parse asset");
+      }
+      this.coords = [+match[1], +match[2]];
+      this.lastSalePrice_eth = this.raw.lastSale ? +this.raw.lastSale.eth_price : 0;
+    }
+    get previewSpriteCssName() {
+      return (this.type === 0 ? "male-sprite" : "female-sprite") + "-" + this.coords[0].toString().replace("-", "m") + "-" + this.coords[1].toString().replace("-", "m");
+    }
+  };
+  var AssetCollection = class {
+    constructor(init) {
+      const maleAssets = init.filter((x3) => x3.type === 0);
+      const femaleAssets = init.filter((x3) => x3.type === 1);
+      this.male = new AssetSet(0, maleAssets);
+      this.female = new AssetSet(1, femaleAssets);
+    }
+    get(type, x3, y3) {
+      return (type === 1 ? this.female : this.male).get(x3, y3);
+    }
+  };
+  var AssetSet = class {
+    constructor(type, init) {
+      this._assets = new Set();
+      this.type = type;
+      for (const asset of init) {
+        this._assets.add(asset);
+      }
+      this.maxX = Math.max(...init.map((x3) => x3.coords[0]));
+      this.minX = Math.min(...init.map((x3) => x3.coords[0]));
+      this.minY = Math.min(...init.map((x3) => x3.coords[1]));
+      this.maxY = Math.max(...init.map((x3) => x3.coords[1]));
+    }
+    get assets() {
+      return Array.from(this._assets);
+    }
+    get sortedByPriceLowHigh() {
+      return this.assets.sort((a3, b3) => a3.lastSalePrice_eth - b3.lastSalePrice_eth);
+    }
+    get(x3, y3) {
+      return this.assets.find((asset) => {
+        return asset.coords[0] === x3 && asset.coords[1] === y3;
+      });
+    }
+    has(x3, y3) {
+      return this.assets.some((asset) => {
+        return asset.coords[0] === x3 && asset.coords[1] === y3;
+      });
+    }
+  };
+
+  // src/grid.ts
+  function assetGridFromPositions(collection) {
+    return {
+      move: (current, delta) => {
+        let x3 = current[0] + delta[0];
+        let y3 = current[1] + delta[1];
+        while (x3 <= collection.maxX && x3 >= collection.minX && y3 <= collection.maxY && y3 >= collection.minY) {
+          if (collection.has(x3, y3)) {
+            return collection.get(x3, y3);
+          }
+          x3 += delta[0];
+          y3 += delta[1];
+        }
+      }
+    };
+  }
+  function assetGridFromList(width, assets) {
+    return {
+      move: (current, delta) => {
+        const currentIndex = assets.findIndex((asset) => asset.coords[0] === current[0] && asset.coords[1] === current[1]);
+        if (typeof currentIndex !== "number") {
+          return void 0;
+        }
+        const newX = currentIndex % width + delta[0];
+        const newY = Math.floor(currentIndex / width) + delta[1];
+        const newIndex = newY * width + newX;
+        return assets[newIndex];
+      }
+    };
+  }
 
   // src/hooks.ts
   var useAppSelector = useSelector;
@@ -23535,70 +23627,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }();
   N2();
 
-  // src/data.ts
-  var AssetType;
-  (function(AssetType3) {
-    AssetType3[AssetType3["Male"] = 0] = "Male";
-    AssetType3[AssetType3["Female"] = 1] = "Female";
-  })(AssetType || (AssetType = {}));
-  var Asset = class {
-    constructor(raw) {
-      this.raw = raw;
-      this.name = raw.name;
-      this.type = raw.name.startsWith("Male") ? 0 : 1;
-      const match = raw.name.match(/\((-?\d+), (-?\d+)\)/);
-      if (!match) {
-        console.log(raw.name);
-        throw new Error("Could not parse asset");
-      }
-      this.coords = [+match[1], +match[2]];
-      this.lastSalePrice_eth = this.raw.lastSale ? +this.raw.lastSale.eth_price : 0;
-    }
-    get previewSpriteCssName() {
-      return (this.type === 0 ? "male-sprite" : "female-sprite") + "-" + this.coords[0].toString().replace("-", "m") + "-" + this.coords[1].toString().replace("-", "m");
-    }
-    get previewUrl() {
-      return `/${this.type === 0 ? "out-male-previews" : "out-female-previews"}/${this.coords[0]},${this.coords[1]}.png`;
-    }
-  };
-  var AssetCollection = class {
-    constructor(init) {
-      const maleAssets = init.filter((x3) => x3.type === 0);
-      const femaleAssets = init.filter((x3) => x3.type === 1);
-      this.male = new AssetSet(0, maleAssets);
-      this.female = new AssetSet(1, femaleAssets);
-    }
-    get(type, x3, y3) {
-      return (type === 1 ? this.female : this.male).get(x3, y3);
-    }
-  };
-  var AssetSet = class {
-    constructor(type, init) {
-      this._assets = new Set();
-      this.type = type;
-      for (const asset of init) {
-        this._assets.add(asset);
-      }
-      this.maxX = Math.max(...init.map((x3) => x3.coords[0]));
-      this.minX = Math.min(...init.map((x3) => x3.coords[0]));
-      this.minY = Math.min(...init.map((x3) => x3.coords[1]));
-      this.maxY = Math.max(...init.map((x3) => x3.coords[1]));
-    }
-    get assets() {
-      return Array.from(this._assets);
-    }
-    get(x3, y3) {
-      return this.assets.find((asset) => {
-        return asset.coords[0] === x3 && asset.coords[1] === y3;
-      });
-    }
-    has(x3, y3) {
-      return this.assets.some((asset) => {
-        return asset.coords[0] === x3 && asset.coords[1] === y3;
-      });
-    }
-  };
-
   // src/store.ts
   var AppMode;
   (function(AppMode2) {
@@ -23606,9 +23634,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     AppMode2[AppMode2["Loaded"] = 1] = "Loaded";
   })(AppMode || (AppMode = {}));
   var DisplayedData;
-  (function(DisplayedData3) {
-    DisplayedData3[DisplayedData3["None"] = 0] = "None";
-    DisplayedData3[DisplayedData3["Price"] = 1] = "Price";
+  (function(DisplayedData2) {
+    DisplayedData2[DisplayedData2["None"] = 0] = "None";
+    DisplayedData2[DisplayedData2["Price"] = 1] = "Price";
   })(DisplayedData || (DisplayedData = {}));
   var CellSorting;
   (function(CellSorting2) {
@@ -23641,7 +23669,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       },
       [DidSelectAction.type]: (state, event2) => {
         return __spreadProps(__spreadValues({}, state), {
-          selected: event2.payload
+          selected: event2.payload ? { type: event2.payload.type, x: event2.payload.coords[0], y: event2.payload.coords[1] } : void 0
         });
       },
       [ChangeSortingAction.type]: (state, event2) => {
@@ -23653,7 +23681,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
   var store = createStore(slice.reducer);
 
-  // src/Collection.tsx
+  // src/components/Collection.tsx
+  var import_react9 = __toModule(require_react());
   function Grid(props) {
     const found = new Set();
     const collection = props.collection;
@@ -23672,7 +23701,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         e2.push(/* @__PURE__ */ import_react9.default.createElement(Cell, {
           key: x3.coords.join(),
           asset: x3,
-          displayInfo: props.displayInfo,
           collection,
           leftPadding,
           topPadding,
@@ -23701,12 +23729,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       }, e2);
     } else {
-      for (const x3 of collection.assets.sort((a3, b3) => a3.lastSalePrice_eth - b3.lastSalePrice_eth)) {
+      for (const x3 of collection.sortedByPriceLowHigh) {
         found.add(x3.coords.join());
         e2.push(/* @__PURE__ */ import_react9.default.createElement(Cell, {
           key: x3.coords.join(),
           asset: x3,
-          displayInfo: props.displayInfo,
           collection,
           leftPadding,
           topPadding,
@@ -23736,11 +23763,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         gridArea: props.gridArea
       },
       onClick: () => {
-        dispatch(slice.actions.didSelectAction({ type: props.asset.type, x: props.asset.coords[0], y: props.asset.coords[1] }));
+        dispatch(slice.actions.didSelectAction({ type: props.asset.type, coords: props.asset.coords }));
       }
     }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "cell-content " + props.asset.previewSpriteCssName,
-      style: {}
+      style: {
+        "--preview-url": `url(${props.asset.raw.image_preview_url})`
+      }
     })));
   }
   function EmptyCell(props) {
@@ -23762,7 +23791,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }), /* @__PURE__ */ import_react9.default.createElement(Grid, {
       collection: props.collection,
       sorting: props.sorting,
-      displayInfo: props.displayInfo,
       minDimensions: props.minDimensions
     }));
   }
@@ -23804,12 +23832,26 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, elements);
   }
 
-  // src/App.tsx
+  // src/components/SelectedInfo.tsx
+  var import_react10 = __toModule(require_react());
+  function SelectedInfo(props) {
+    const asset = props.data.get(props.type, props.x, props.y);
+    return /* @__PURE__ */ import_react10.default.createElement("div", {
+      className: "selected-info"
+    }, /* @__PURE__ */ import_react10.default.createElement("img", {
+      className: "thumbnail",
+      src: asset.raw.image_thumbnail_url
+    }), /* @__PURE__ */ import_react10.default.createElement("h2", null, props.type === AssetType.Female ? "Female" : "Male", " ", /* @__PURE__ */ import_react10.default.createElement("span", null, "x=", props.x), ", ", /* @__PURE__ */ import_react10.default.createElement("span", null, "y=", props.y)), /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("span", null, "Number Sales: ", asset.raw.num_sales), asset.raw.lastSale && /* @__PURE__ */ import_react10.default.createElement("span", null, "Last Sale: ", asset.raw.lastSale.eth_price, "ETH ($", asset.raw.lastSale.usd_price, ")")), /* @__PURE__ */ import_react10.default.createElement("a", {
+      href: `https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/${asset.raw.token_id}`
+    }, "View on Open Sea"));
+  }
+
+  // src/components/App.tsx
   function App() {
     const dispatch = useDispatch2();
-    (0, import_react10.useEffect)(() => {
+    (0, import_react11.useEffect)(() => {
       const impl = () => __async(this, null, function* () {
-        const result = yield fetch("./data.json");
+        const result = yield fetch("https://raw.githubusercontent.com/mattbierner/non-flesh-tokens-data/master/data.json");
         if (result.status === 200) {
           const json = yield result.json();
           const assets = json.assets.map((raw) => new Asset(raw));
@@ -23819,30 +23861,39 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       impl();
     }, []);
     const state = useAppSelector((state2) => state2);
-    (0, import_react10.useEffect)(() => {
+    switch (state.mode) {
+      case AppMode.Loading:
+        return /* @__PURE__ */ import_react11.default.createElement("div", null, "Loading");
+      case AppMode.Loaded:
+        return /* @__PURE__ */ import_react11.default.createElement(LoadedView, {
+          state
+        });
+    }
+  }
+  function LoadedView(props) {
+    const dispatch = useDispatch2();
+    const state = props.state;
+    (0, import_react11.useEffect)(() => {
       const handler = (e2) => {
         if (state.mode !== AppMode.Loaded || !state.selected) {
           return;
         }
         const collection = state.selected.type === AssetType.Male ? state.data.male : state.data.female;
+        const grid = state.sorting === CellSorting.Position ? assetGridFromPositions(collection) : assetGridFromList(13, collection.sortedByPriceLowHigh);
         const move = (dx, dy) => {
           e2.preventDefault();
-          let x3 = state.selected.x + dx;
-          let y3 = state.selected.y + dy;
-          while (x3 <= collection.maxX && x3 >= collection.minX && y3 <= collection.maxY && y3 >= collection.minY) {
-            if (collection.has(x3, y3)) {
-              dispatch(slice.actions.didSelectAction({
-                type: state.selected.type,
-                x: x3,
-                y: y3
-              }));
-              return;
-            }
-            x3 += dx;
-            y3 += dy;
+          const newAsset = grid.move([state.selected.x, state.selected.y], [dx, dy]);
+          if (newAsset) {
+            dispatch(slice.actions.didSelectAction({
+              type: state.selected.type,
+              coords: newAsset.coords
+            }));
           }
         };
         switch (e2.key) {
+          case "Escape":
+            dispatch(slice.actions.didSelectAction(void 0));
+            break;
           case "ArrowUp":
             move(0, -1);
             break;
@@ -23862,83 +23913,47 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         window.removeEventListener("keydown", handler);
       };
     }, [state]);
-    switch (state.mode) {
-      case AppMode.Loading:
-        return /* @__PURE__ */ import_react10.default.createElement("div", null, "Loading");
-      case AppMode.Loaded:
-        let info;
-        const displayedData = state.displayedData;
-        switch (displayedData) {
-          case DisplayedData.None:
-            info = { type: DisplayedData.None };
-            break;
-          case DisplayedData.Price:
-            const prices = state.data.assets.map((x3) => x3.price);
-            const minPrice = Math.min(...prices);
-            const maxPrice = Math.max(...prices);
-            info = {
-              type: DisplayedData.Price,
-              min: minPrice,
-              max: maxPrice
-            };
-            break;
-        }
-        const minDimensions = [12, 26];
-        return /* @__PURE__ */ import_react10.default.createElement(u2, {
-          flipKey: state.sorting
-        }, /* @__PURE__ */ import_react10.default.createElement("div", {
-          className: "app"
-        }, /* @__PURE__ */ import_react10.default.createElement("div", {
-          className: "controls"
-        }, /* @__PURE__ */ import_react10.default.createElement("select", {
-          id: "cell-sorting",
-          value: state.sorting,
-          onChange: (e2) => {
-            dispatch(slice.actions.changeSorting({ value: event.target.value }));
-          }
-        }, /* @__PURE__ */ import_react10.default.createElement("option", {
-          value: CellSorting.Position
-        }, "Order by Position"), /* @__PURE__ */ import_react10.default.createElement("option", {
-          value: CellSorting.PriceHighLow
-        }, "Order by Price (high to low)"))), /* @__PURE__ */ import_react10.default.createElement(Collection, {
-          className: "male-grid",
-          title: "Male",
-          sorting: state.sorting,
-          collection: state.data.male,
-          displayInfo: info,
-          minDimensions
-        }), /* @__PURE__ */ import_react10.default.createElement(Collection, {
-          className: "female-grid",
-          title: "Female",
-          sorting: state.sorting,
-          collection: state.data.female,
-          displayInfo: info,
-          minDimensions
-        }), state.selected ? /* @__PURE__ */ import_react10.default.createElement(SelectedInfo, {
-          data: state.data,
-          x: state.selected.x,
-          y: state.selected.y,
-          type: state.selected.type
-        }) : null));
-    }
+    const minDimensions = [12, 26];
+    return /* @__PURE__ */ import_react11.default.createElement(u2, {
+      flipKey: state.sorting
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "app"
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "controls"
+    }, /* @__PURE__ */ import_react11.default.createElement("select", {
+      id: "cell-sorting",
+      value: state.sorting,
+      onChange: (e2) => {
+        dispatch(slice.actions.changeSorting({ value: event.target.value }));
+      }
+    }, /* @__PURE__ */ import_react11.default.createElement("option", {
+      value: CellSorting.Position
+    }, "Order by Position"), /* @__PURE__ */ import_react11.default.createElement("option", {
+      value: CellSorting.PriceHighLow
+    }, "Order by Price (high to low)"))), /* @__PURE__ */ import_react11.default.createElement(Collection, {
+      className: "male-grid",
+      title: "Male",
+      sorting: state.sorting,
+      collection: state.data.male,
+      minDimensions
+    }), /* @__PURE__ */ import_react11.default.createElement(Collection, {
+      className: "female-grid",
+      title: "Female",
+      sorting: state.sorting,
+      collection: state.data.female,
+      minDimensions
+    }), state.selected ? /* @__PURE__ */ import_react11.default.createElement(SelectedInfo, {
+      data: state.data,
+      x: state.selected.x,
+      y: state.selected.y,
+      type: state.selected.type
+    }) : null));
   }
-  function SelectedInfo(props) {
-    const asset = props.data.get(props.type, props.x, props.y);
-    return /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "selected-info"
-    }, /* @__PURE__ */ import_react10.default.createElement("img", {
-      className: "thumbnail",
-      src: asset.raw.image_thumbnail_url
-    }), /* @__PURE__ */ import_react10.default.createElement("h2", null, props.type === AssetType.Female ? "Female" : "Male", " ", /* @__PURE__ */ import_react10.default.createElement("span", null, "x=", props.x), ", ", /* @__PURE__ */ import_react10.default.createElement("span", null, "y=", props.y)), /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("span", null, "Number Sales: ", asset.raw.num_sales), asset.raw.lastSale && /* @__PURE__ */ import_react10.default.createElement("span", null, "Last Sale: ", asset.raw.lastSale.eth_price, "ETH ($", asset.raw.lastSale.usd_price, ")")), /* @__PURE__ */ import_react10.default.createElement("span", null, asset.lastSalePrice_eth), /* @__PURE__ */ import_react10.default.createElement("a", {
-      href: `https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/${asset.raw.token_id}`
-    }, "View on Open Sea"));
-  }
-  var App_default = App;
 
   // src/index.tsx
-  import_react_dom2.default.render(/* @__PURE__ */ import_react11.default.createElement(import_react11.default.StrictMode, null, /* @__PURE__ */ import_react11.default.createElement(Provider_default, {
+  import_react_dom2.default.render(/* @__PURE__ */ import_react12.default.createElement(import_react12.default.StrictMode, null, /* @__PURE__ */ import_react12.default.createElement(Provider_default, {
     store
-  }, /* @__PURE__ */ import_react11.default.createElement(App_default, null))), document.getElementById("index-body"));
+  }, /* @__PURE__ */ import_react12.default.createElement(App, null))), document.getElementById("index-body"));
 })();
 /*
 object-assign

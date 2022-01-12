@@ -8,11 +8,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
         img {
             display: block;
             max-width: 600px;
+            margin-bottom: 1rem;
         }
 
         .index-nav {
@@ -35,7 +36,7 @@
             z-index: inherit;
             
             &.empty-cell {
-                background-color: #f0f0f0;
+                background-color: #e7e7e7;
             }
   
             .cell-content {
@@ -51,8 +52,18 @@
                 top: -0.4rem;
                 width: calc(100% + 0.8rem);
                 height: calc(100% + 0.8rem);
-                background-color: red;
+                background-color: $foreground;
                 z-index: -99;
+            }
+
+            &:hover:not(.empty-cell)::after {
+                opacity: 0.8;
+            }
+
+            &.selected .cell-content {
+                background-image: var(--preview-url);
+                background-size: contain;
+                background-position: 0;
             }
         }
 
@@ -111,6 +122,14 @@
         border: 1px solid #000a;
         bottom: 1rem;
         margin-bottom: 2rem;
+    }
+
+    #cell-sorting {
+        color: $foreground;
+        background-color: $background;
+        padding: 0.4rem 0.2rem;
+        border: none;
+        border-bottom: 1px solid $foreground;
     }
 }
 

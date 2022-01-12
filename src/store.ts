@@ -17,27 +17,30 @@ export enum CellSorting {
     PriceHighLow = 'price-high-low',
 }
 
-export type RootState = {
-    readonly mode: AppMode.Loading;
-} | {
-    readonly mode: AppMode.Loaded;
+export namespace RootState {
 
-    readonly data: AssetCollection;
-
-    readonly displayedData: DisplayedData;
-
-    readonly selected?: {
-        readonly type: AssetType;
-        readonly x: number;
-        readonly y: number;
+    export type Loaded = {
+        readonly mode: AppMode.Loaded;
+        readonly data: AssetCollection;
+        readonly displayedData: DisplayedData;
+        readonly selected?: {
+            readonly type: AssetType;
+            readonly x: number;
+            readonly y: number;
+        };
+        readonly sorting: CellSorting;
     };
 
-    readonly sorting: CellSorting;
+    export type Loading = {
+        readonly mode: AppMode.Loading;
+    };
+
+    export type State = Loading | Loaded;
 };
 
-const initialState: RootState = {
+const initialState = {
     mode: AppMode.Loading
-} as RootState;
+} as RootState.State;
 
 
 type Action =
@@ -46,12 +49,12 @@ type Action =
     | typeof DidSelectAction
     ;
 
-export const UpdateDisplayedDataAction = createAction('updateDisplayed')
+export const UpdateDisplayedDataAction = createAction('updateDisplayed');
 
 
 export const DidLoadAction = createAction<{ assets: readonly Asset[] }, 'didLoad'>('didLoad');
 
-export const DidSelectAction = createAction<{ type: AssetType, x: number, y: number }, 'didSelectAction'>('didSelectAction');
+export const DidSelectAction = createAction<{ type: AssetType, coords: [number, number] } | undefined, 'didSelectAction'>('didSelectAction');
 
 export const ChangeSortingAction = createAction<{ value: CellSorting }, 'changeSorting'>('changeSorting');
 
@@ -73,10 +76,10 @@ export const slice = createSlice({
                 sorting: CellSorting.Position,
             };
         },
-        [DidSelectAction.type]: (state, event: PayloadAction<{ type: AssetType, x: number, y: number }>) => {
+        [DidSelectAction.type]: (state, event: PayloadAction<{ type: AssetType, coords: [number, number] } | undefined>) => {
             return {
                 ...state,
-                selected: event.payload,
+                selected: event.payload ? { type: event.payload.type, x: event.payload.coords[0], y: event.payload.coords[1] } : undefined,
             };
         },
         [ChangeSortingAction.type]: (state, event: PayloadAction<{ value: CellSorting }>) => {

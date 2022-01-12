@@ -1,20 +1,12 @@
 import React from 'react';
 import { Flipped } from 'react-flip-toolkit';
-import { Asset, AssetSet } from './data';
-import { useAppSelector } from './hooks';
-import { AppMode, CellSorting, DisplayedData, slice, useDispatch } from './store';
+import { Asset, AssetSet } from '../data';
+import { useAppSelector } from '../hooks';
+import { AppMode, CellSorting, slice, useDispatch } from '../store';
 
-type DisplayInfo =
-    { readonly type: DisplayedData.None } |
-    {
-        readonly type: DisplayedData.Price;
-        readonly min: number;
-        readonly max: number;
-    };
 
 function Grid(props: {
     collection: AssetSet,
-    displayInfo: DisplayInfo,
     minDimensions: [number, number],
     sorting: CellSorting
 }) {
@@ -42,7 +34,6 @@ function Grid(props: {
             e.push(
                 <Cell key={x.coords.join()}
                     asset={x}
-                    displayInfo={props.displayInfo}
                     collection={collection}
                     leftPadding={leftPadding}
                     topPadding={topPadding}
@@ -72,13 +63,12 @@ function Grid(props: {
         )
 
     } else {
-        for (const x of collection.assets.sort((a, b) => a.lastSalePrice_eth - b.lastSalePrice_eth)) {
+        for (const x of collection.sortedByPriceLowHigh) {
             found.add(x.coords.join());
 
             e.push(
                 <Cell key={x.coords.join()}
                     asset={x}
-                    displayInfo={props.displayInfo}
                     collection={collection}
                     leftPadding={leftPadding}
                     topPadding={topPadding}
@@ -98,7 +88,6 @@ function Grid(props: {
 
 function Cell(props: {
     asset: Asset,
-    displayInfo: DisplayInfo,
     collection: AssetSet,
     leftPadding: number,
     topPadding: number,
@@ -121,12 +110,11 @@ function Cell(props: {
             <div className={'cell ' + (isSelected ? 'selected' : '')} style={{
                 gridArea: props.gridArea,
             }} onClick={() => {
-                dispatch(slice.actions.didSelectAction({ type: props.asset.type, x: props.asset.coords[0], y: props.asset.coords[1] }))
+                dispatch(slice.actions.didSelectAction({ type: props.asset.type, coords: props.asset.coords }))
             }}>
                 <div className={'cell-content ' + props.asset.previewSpriteCssName} style={{
-                    // backgroundImage: `url(${props.asset.previewUrl})`,
-                    // backgroundSize: '100%'
-                }}>
+                    '--preview-url': `url(${props.asset.raw.image_preview_url})`,
+                } as any}>
                 </div>
             </div>
         </Flipped>
@@ -152,7 +140,6 @@ export function Collection(props: {
     title: string,
     className?: string,
     collection: AssetSet,
-    displayInfo: DisplayInfo,
     minDimensions: [number, number],
     sorting: CellSorting,
 }) {
@@ -162,7 +149,6 @@ export function Collection(props: {
             <Grid
                 collection={props.collection}
                 sorting={props.sorting}
-                displayInfo={props.displayInfo}
                 minDimensions={props.minDimensions} />
         </div>
     );

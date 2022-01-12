@@ -70,53 +70,15 @@ ul ol, ol ul {
 }
 
 a {
-    color: $accent-color;
+    color: $foreground;
     text-decoration: none;
     cursor: pointer;
-
+    
     &:hover, &:active {
-        color: $accent-color;
+        color: $foreground;
+        text-decoration: underline;
     }
 }
-
-ul, ol {
-    margin: 15px 0;
-    padding-left: 30px;
-    }
-
-ul {
-    list-style-type: square;
-}
-
-ol {
-    list-style-type: decimal;
-}
-
-ol ul, ul ol, ul ul, ol ol {
-    margin: 0;
-}
-
-ul ul, ol ul {
-    list-style-type: circle;
-}
-
-em, i {
-    font-style: italic;
-}
-
-strong, b {
-    font-weight: bold;
-}
-
-img, video {
-    max-width: 100%;
-}
-
-sup {
-    font-size: xx-small;
-    vertical-align: super;
-}
-
 
 @media only screen and (max-width: 600px) {
     body {
