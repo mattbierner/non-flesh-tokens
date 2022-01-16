@@ -23897,7 +23897,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const state = useAppSelector((state2) => state2);
     switch (state.mode) {
       case AppMode.Loading:
-        return /* @__PURE__ */ import_react11.default.createElement("div", null, "Loading");
+        return /* @__PURE__ */ import_react11.default.createElement("div", {
+          className: "loading"
+        }, "Loading...");
       case AppMode.Loaded:
         return /* @__PURE__ */ import_react11.default.createElement(LoadedView, {
           state

@@ -27,7 +27,7 @@ export function App() {
     switch (state.mode) {
         case AppMode.Loading:
             return (
-                <div>Loading</div>
+                <div className='loading'>Loading...</div>
             );
 
         case AppMode.Loaded:
