@@ -22555,9 +22555,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/data.ts
   var AssetType;
-  (function(AssetType3) {
-    AssetType3[AssetType3["Male"] = 0] = "Male";
-    AssetType3[AssetType3["Female"] = 1] = "Female";
+  (function(AssetType2) {
+    AssetType2[AssetType2["Male"] = 0] = "Male";
+    AssetType2[AssetType2["Female"] = 1] = "Female";
   })(AssetType || (AssetType = {}));
   var Asset = class {
     constructor(raw) {
@@ -23664,10 +23664,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           mode: 1,
           data: collection,
           displayedData: 0,
-          sorting: CellSorting.Position
+          sorting: CellSorting.Position,
+          selected: getInitialSelection()
         };
       },
       [DidSelectAction.type]: (state, event2) => {
+        if (event2.payload) {
+          const url = new URL(window.location.href);
+          url.searchParams.set("model", event2.payload.type === AssetType.Male ? "m" : "f");
+          url.searchParams.set("x", event2.payload.coords[0].toString());
+          url.searchParams.set("y", event2.payload.coords[1].toString());
+          history.replaceState(null, "", url);
+        } else {
+          const url = new URL(window.location.href);
+          url.search = "";
+          history.replaceState(null, "", url);
+        }
         return __spreadProps(__spreadValues({}, state), {
           selected: event2.payload ? { type: event2.payload.type, x: event2.payload.coords[0], y: event2.payload.coords[1] } : void 0
         });
@@ -23680,6 +23692,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
   var store = createStore(slice.reducer);
+  function getInitialSelection() {
+    const params = new URLSearchParams(document.location.search);
+    const model = params.get("model");
+    const x3 = params.get("x");
+    const y3 = params.get("y");
+    if (!model || !x3 || !y3) {
+      return void 0;
+    }
+    return {
+      type: model === "m" ? AssetType.Male : AssetType.Female,
+      x: parseInt(x3) || 0,
+      y: parseInt(y3) || 0
+    };
+  }
 
   // src/components/Collection.tsx
   var import_react9 = __toModule(require_react());
@@ -23836,6 +23862,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_react10 = __toModule(require_react());
   function SelectedInfo(props) {
     const asset = props.data.get(props.type, props.x, props.y);
+    if (!asset) {
+      return /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null);
+    }
     return /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "selected-info"
     }, /* @__PURE__ */ import_react10.default.createElement("img", {

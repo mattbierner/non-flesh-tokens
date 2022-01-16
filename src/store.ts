@@ -17,17 +17,19 @@ export enum CellSorting {
     PriceHighLow = 'price-high-low',
 }
 
+export interface SelectionState {
+    readonly type: AssetType;
+    readonly x: number;
+    readonly y: number;
+}
+
 export namespace RootState {
 
     export type Loaded = {
         readonly mode: AppMode.Loaded;
         readonly data: AssetCollection;
         readonly displayedData: DisplayedData;
-        readonly selected?: {
-            readonly type: AssetType;
-            readonly x: number;
-            readonly y: number;
-        };
+        readonly selected?: SelectionState;
         readonly sorting: CellSorting;
     };
 
@@ -74,9 +76,22 @@ export const slice = createSlice({
                 data: collection,
                 displayedData: DisplayedData.None,
                 sorting: CellSorting.Position,
+                selected: getInitialSelection(),
             };
         },
         [DidSelectAction.type]: (state, event: PayloadAction<{ type: AssetType, coords: [number, number] } | undefined>) => {
+            if (event.payload) {
+                const url = new URL(window.location.href);
+                url.searchParams.set('model', event.payload.type === AssetType.Male ? 'm' : 'f');
+                url.searchParams.set('x', event.payload.coords[0].toString());
+                url.searchParams.set('y', event.payload.coords[1].toString());
+                history.replaceState(null, '', url);
+            } else {
+                const url = new URL(window.location.href);
+                url.search = '';
+                history.replaceState(null, '', url);
+            }
+
             return {
                 ...state,
                 selected: event.payload ? { type: event.payload.type, x: event.payload.coords[0], y: event.payload.coords[1] } : undefined,
@@ -94,3 +109,22 @@ export const slice = createSlice({
 export type AppDispatch = typeof store.dispatch
 
 export const store = createStore(slice.reducer)
+
+function getInitialSelection(): SelectionState | undefined {
+    const params = new URLSearchParams(document.location.search);
+
+    const model = params.get('model');
+    const x = params.get('x');
+    const y = params.get('y');
+
+    if (!model || !x || !y) {
+        return undefined;
+    }
+
+    return {
+        type: model === 'm' ? AssetType.Male : AssetType.Female,
+        x: parseInt(x) || 0,
+        y: parseInt(y) || 0,
+    }
+}
+

@@ -2,7 +2,11 @@ import React from 'react';
 import { AssetCollection, AssetType } from "../data";
 
 export function SelectedInfo(props: { data: AssetCollection, x: number, y: number, type: AssetType }) {
-    const asset = props.data.get(props.type, props.x, props.y)!;
+    const asset = props.data.get(props.type, props.x, props.y);
+    if (!asset) {
+        return <></>;
+    }
+
     return (
         <div className='selected-info'>
             <img className='thumbnail' src={asset.raw.image_thumbnail_url} />
