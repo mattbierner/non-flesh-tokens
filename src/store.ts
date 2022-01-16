@@ -82,9 +82,8 @@ export const slice = createSlice({
         [DidSelectAction.type]: (state, event: PayloadAction<{ type: AssetType, coords: [number, number] } | undefined>) => {
             if (event.payload) {
                 const url = new URL(window.location.href);
-                url.searchParams.set('model', event.payload.type === AssetType.Male ? 'm' : 'f');
-                url.searchParams.set('x', event.payload.coords[0].toString());
-                url.searchParams.set('y', event.payload.coords[1].toString());
+                // OpenSea's UX is really restrictive about url format, so use this shitty encoding
+                url.search = `${event.payload.type === AssetType.Male ? 'm' : 'f'}x${event.payload.coords[0]}y${event.payload.coords[1]}`
                 history.replaceState(null, '', url);
             } else {
                 const url = new URL(window.location.href);
@@ -111,20 +110,15 @@ export type AppDispatch = typeof store.dispatch
 export const store = createStore(slice.reducer)
 
 function getInitialSelection(): SelectionState | undefined {
-    const params = new URLSearchParams(document.location.search);
-
-    const model = params.get('model');
-    const x = params.get('x');
-    const y = params.get('y');
-
-    if (!model || !x || !y) {
-        return undefined;
+    const params = document.location.search.match(/([mf])x([\d-]+)y([\d-]+)/);
+    if (!params) {
+        return;
     }
 
     return {
-        type: model === 'm' ? AssetType.Male : AssetType.Female,
-        x: parseInt(x) || 0,
-        y: parseInt(y) || 0,
+        type: params[1] === 'm' ? AssetType.Male : AssetType.Female,
+        x: parseInt(params[2]) || 0,
+        y: parseInt(params[3]) || 0,
     }
 }
 

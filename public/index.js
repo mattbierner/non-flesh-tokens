@@ -23671,9 +23671,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       [DidSelectAction.type]: (state, event2) => {
         if (event2.payload) {
           const url = new URL(window.location.href);
-          url.searchParams.set("model", event2.payload.type === AssetType.Male ? "m" : "f");
-          url.searchParams.set("x", event2.payload.coords[0].toString());
-          url.searchParams.set("y", event2.payload.coords[1].toString());
+          url.search = `${event2.payload.type === AssetType.Male ? "m" : "f"}x${event2.payload.coords[0]}y${event2.payload.coords[1]}`;
           history.replaceState(null, "", url);
         } else {
           const url = new URL(window.location.href);
@@ -23693,17 +23691,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
   var store = createStore(slice.reducer);
   function getInitialSelection() {
-    const params = new URLSearchParams(document.location.search);
-    const model = params.get("model");
-    const x3 = params.get("x");
-    const y3 = params.get("y");
-    if (!model || !x3 || !y3) {
-      return void 0;
+    const params = document.location.search.match(/([mf])x([\d-]+)y([\d-]+)/);
+    if (!params) {
+      return;
     }
     return {
-      type: model === "m" ? AssetType.Male : AssetType.Female,
-      x: parseInt(x3) || 0,
-      y: parseInt(y3) || 0
+      type: params[1] === "m" ? AssetType.Male : AssetType.Female,
+      x: parseInt(params[2]) || 0,
+      y: parseInt(params[3]) || 0
     };
   }
 
