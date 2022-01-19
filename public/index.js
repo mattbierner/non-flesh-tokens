@@ -23864,7 +23864,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "selected-info"
     }, /* @__PURE__ */ import_react10.default.createElement("img", {
       className: "thumbnail",
-      src: asset.raw.image_thumbnail_url
+      src: asset.raw.image_url
     }), /* @__PURE__ */ import_react10.default.createElement("h2", {
       className: "title"
     }, props.type === AssetType.Female ? "Female" : "Male", " ", /* @__PURE__ */ import_react10.default.createElement("span", null, "x=", props.x), ", ", /* @__PURE__ */ import_react10.default.createElement("span", null, "y=", props.y)), /* @__PURE__ */ import_react10.default.createElement("div", {

@@ -9,7 +9,7 @@ export function SelectedInfo(props: { data: AssetCollection, x: number, y: numbe
 
     return (
         <div className='selected-info'>
-            <img className='thumbnail' src={asset.raw.image_thumbnail_url} />
+            <img className='thumbnail' src={asset.raw.image_url} />
 
             <h2 className='title'>{props.type === AssetType.Female ? 'Female' : 'Male'} <span>x={props.x}</span>, <span>y={props.y}</span></h2>
 
