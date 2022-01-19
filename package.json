@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "esbuild src/index.tsx --bundle --outfile=public/index.js",
+    "build:prod": "esbuild src/index.tsx --bundle --minify --outfile=public/index.js",
     "watch": "npm run build -- --watch"
   },
   "eslintConfig": {
