@@ -1,27 +1,60 @@
 ---
-layout: default
-title: "Non-Flesh Tokens"
-description: "TODO"
 ---
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="index" role="main">
+<head>
+    <title>{{ site.name }}</title>
 
-    <div class="spacer"></div>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <header class="index-header">
-        <img title="Non-Flesh Tokens" src="/public/logo.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@mattbierner">
+    <meta name="author" content="{{ site.author }}" />
 
-        <nav class="index-nav">
-            <a href="https://blog.mattbierner.com/non-flesh-tokens">About</a>
-            <a href="https://opensea.io/collection/non-flesh-tokens">Collection</a>
-        </nav>
-    </header>
+    <meta property="og:title" content="{{ site.name }}" />
+    <meta property="twitter:title" content="{{ site.name }}" />
 
-    <main id="index-body"></main>
+    <meta name="description" content="{{ site.description }}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <meta name="twitter:description" content="{{ site.description }}">
 
-    <footer class="index-footer">
-        &copy; 2022 <a href="https://mattbierner.com">Matt Bierner</a>
-    </footer>
+    <meta name="twitter:image" content="{{ site.baseurl }}/public/title.png">
 
-    <script src="/public/index.js"></script>
-</div>
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+
+    {% include analytics.html %}
+</head>
+
+<body class="{{page.className}}">
+
+
+    <div id="index" role="main">
+
+        <div class="spacer"></div>
+
+        <header class="index-header">
+            <img title="Non-Flesh Tokens" src="/public/logo.svg">
+
+            <nav class="index-nav">
+                <a href="https://blog.mattbierner.com/non-flesh-tokens">About</a>
+                <a href="https://opensea.io/collection/non-flesh-tokens">Collection</a>
+            </nav>
+        </header>
+
+        <main id="index-body"></main>
+
+        <footer class="index-footer">
+            &copy; 2022 <a href="https://mattbierner.com">Matt Bierner</a>
+        </footer>
+
+        <script src="/public/index.js"></script>
+    </div>
+    {{ content }}
+</body>
+
+</html>
