@@ -3,7 +3,7 @@ author: Matt Bierner
 description: "Collection of 308 NFTs, each representing a unique block of two high resolution, full-body portraits"
 url: https://nonfleshtokens.com
 
-baseurl: https://nonfleshtokens.com
+publicUrl: https://nonfleshtokens.com
 
 kramdown:
   input: GFM
